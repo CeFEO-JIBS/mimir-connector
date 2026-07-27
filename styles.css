@@ -4,12 +4,14 @@
   --text:#e6e6e6; --muted:#9aa4b2; --dim:#6b7482;
   --accent:#4b7bec; --accent-dim:#3d6ad6;
   --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --display:"Fraunces","Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+  --body:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
   color-scheme:dark;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--text);
-  font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  -webkit-font-smoothing:antialiased}
+  font:16px/1.65 var(--body);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 .wrap{max-width:880px;margin:0 auto;padding:0 24px}
@@ -20,7 +22,8 @@ header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba
 .bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
 .brand{display:flex;align-items:center;gap:10px}
 .brand img{height:30px;width:auto}
-.brand span{font-weight:700;letter-spacing:.5px}
+.brand span{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.2px;
+  font-variation-settings:'SOFT' 20,'WONK' 1}
 nav{display:flex;gap:22px;font-size:14px}
 nav a{color:var(--muted)}
 nav a.on{color:var(--text)}
@@ -28,8 +31,9 @@ nav a.on{color:var(--text)}
 /* hero */
 .hero{text-align:center;padding:72px 0 56px;border-bottom:1px solid var(--line)}
 .hero img{width:min(420px,78%);height:auto;margin-bottom:30px}
-.hero h1{font-size:clamp(26px,4.4vw,38px);line-height:1.25;margin:0 0 16px;letter-spacing:-.4px}
-.hero p{color:var(--muted);font-size:17px;max-width:620px;margin:0 auto 30px}
+.hero h1{font-family:var(--display);font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.15;
+  margin:0 0 18px;letter-spacing:-.5px;font-variation-settings:'SOFT' 24,'WONK' 1}
+.hero p{color:var(--muted);font-size:17.5px;line-height:1.62;max-width:640px;margin:0 auto 32px}
 
 /* buttons */
 .btn{display:inline-block;background:var(--accent);color:#fff;padding:13px 26px;border-radius:9px;
@@ -42,12 +46,13 @@ nav a.on{color:var(--text)}
 /* sections */
 section{padding:52px 0;border-bottom:1px solid var(--line)}
 section:last-of-type{border-bottom:0}
-h2{font-size:23px;margin:0 0 10px;letter-spacing:-.2px}
+h2{font-family:var(--display);font-weight:600;font-size:27px;margin:0 0 10px;letter-spacing:-.3px;
+  font-variation-settings:'SOFT' 20,'WONK' 1}
 h3{font-size:16px;margin:26px 0 6px}
 .sub{color:var(--muted);margin:0 0 26px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
 .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
-.card h3{margin:0 0 6px;font-size:15px}
+.card h3{font-family:var(--display);font-weight:600;margin:0 0 7px;font-size:16.5px}
 .card p{margin:0;color:var(--muted);font-size:14px}
 .card .n{color:var(--accent);font-family:var(--mono);font-size:13px;display:block;margin-bottom:8px}
 
@@ -59,7 +64,7 @@ ol.steps li:last-child{border-left-color:transparent;padding-bottom:0}
 ol.steps li::before{content:counter(s);position:absolute;left:-14px;top:-2px;width:28px;height:28px;
   background:var(--card);border:1px solid var(--line2);border-radius:50%;color:var(--accent);
   font-family:var(--mono);font-size:13px;display:flex;align-items:center;justify-content:center}
-ol.steps h3{margin:0 0 5px;font-size:16px}
+ol.steps h3{font-family:var(--display);font-weight:600;margin:0 0 5px;font-size:17.5px}
 ol.steps p{margin:0;color:var(--muted);font-size:14.5px}
 
 code,.url{font-family:var(--mono);background:var(--card);border:1px solid var(--line);
@@ -73,7 +78,7 @@ code,.url{font-family:var(--mono);background:var(--card);border:1px solid var(--
 details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;
   margin-bottom:10px}
 details[open]{border-color:var(--line2)}
-summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none}
+summary{font-family:var(--display);cursor:pointer;font-weight:600;font-size:16.5px;list-style:none}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";float:right;color:var(--accent);font-family:var(--mono)}
 details[open] summary::after{content:"−"}
