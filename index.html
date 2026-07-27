@@ -13,14 +13,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,SOFT,WONK,wght@9..144,0..100,0..1,500;9..144,0..100,0..1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
-</head><body>
+</head><body class="home">
+<script>
+  // Header lockup fades in once the hero lockup has scrolled away.
+  addEventListener('scroll', function () {
+    document.body.classList.toggle('scrolled', scrollY > 260);
+  }, { passive: true });
+</script>
 <header><div class="wrap bar">
-  <a class="brand" href="/"><img src="/assets/mark-white.png" alt=""><span>Mímir</span></a>
   <nav>
     <a href="/" class="on">Overview</a>
     <a href="/install.html" class="">Install</a>
     <a href="/faq.html" class="">FAQ</a>
   </nav>
+  <a class="brand" href="/"><img src="/assets/lockup-white.png" alt="Mímir"></a>
 </div></header>
 <div class="hero"><div class="wrap">
   <img src="/assets/lockup-white.png" alt="Mímir">

@@ -19,11 +19,11 @@ a:hover{text-decoration:underline}
 /* header */
 header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,17,22,.92);
   backdrop-filter:blur(8px);z-index:10}
-.bar{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
-.brand{display:flex;align-items:center;gap:10px}
-.brand img{height:30px;width:auto}
-.brand span{font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:.2px}
-nav{display:flex;gap:22px;font-size:14px}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:24px}
+.brand{display:flex;align-items:center;flex-shrink:0}
+.brand img{height:34px;width:auto;display:block;opacity:.95;transition:opacity .15s}
+.brand:hover img{opacity:1}
+nav{display:flex;gap:24px;font-size:14.5px}
 nav a{color:var(--muted)}
 nav a.on{color:var(--text)}
 
@@ -93,4 +93,19 @@ footer a{color:var(--muted)}
   nav{gap:14px;font-size:13px}
   .hero{padding:48px 0 40px}
   section{padding:40px 0}
+}
+
+/* The hero carries the lockup at full size, so the header mark is redundant on
+   the landing page until you scroll. Fade it in rather than doubling up. */
+body.home .brand img{opacity:0;transition:opacity .25s}
+body.home.scrolled .brand img{opacity:.95}
+
+@media(max-width:640px){
+  .bar{gap:14px}
+  .brand img{height:26px}
+  nav{gap:15px;font-size:13.5px}
+}
+@media(max-width:420px){
+  .brand img{height:23px}
+  nav{gap:12px;font-size:13px}
 }
