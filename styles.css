@@ -17,8 +17,7 @@ a:hover{text-decoration:underline}
 .wrap{max-width:880px;margin:0 auto;padding:0 24px}
 
 /* header */
-header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,17,22,.92);
-  backdrop-filter:blur(8px);z-index:10}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:10}
 .bar{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:24px}
 .brand{display:flex;align-items:center;flex-shrink:0}
 .brand img{height:34px;width:auto;display:block;opacity:.95;transition:opacity .15s}
